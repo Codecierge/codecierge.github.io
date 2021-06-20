@@ -1,5 +1,6 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="737517082677-02g9c2kul50lcaqtu8sa81m7p5ftobgj.apps.googleusercontent.com">
+<script type="text/javascript" src="md5.min.js"></script>
 <h1> TEST teścik </h1>
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 <script src=mails.js></script>
@@ -11,7 +12,7 @@ function onSignIn(googleUser) {
     console.log('Name: ' + profile.getName());
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    if(mails.includes(profile.getEmail())) console.log('welcome!!!!');
+    if(mails.includes(md5(profile.getEmail()))) console.log('welcome!!!!');
 }
 
 </script>
